@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Как всё начиналось ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* чтобы контейнер начинался сверху с отступом */
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* вертикальная структура */
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1000px;
+    width: 90%;
+    gap: 20px;
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+    padding-top: 50px; /* добавляем отступ сверху */
+}
+
+.video-text-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* расстояние между видео и текстом */
+    flex-wrap: wrap;
+}
+
+.text-block {
+    max-width: 250px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.video {
+    width: 350px; /* Видео не на весь экран */
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.6);
+    margin-top: 20px; /* дополнительный отступ сверху */
+}
+
+/* Кнопка под видео */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background: white;
+    color: #ff4e8a;
+    font-weight: bold;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Адаптив */
+@media (max-width: 800px) {
+    .video-text-row {
+        flex-direction: column;
+    }
+    .text-block {
+        max-width: 90%;
+        text-align: center;
+    }
+    .video {
+        width: 80%;
+        margin: 20px 0 0 0; /* верхний отступ */
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="video-text-row">
+        <div class="text-block">
+            <p>Помнишь тот день?<br>Я тогда даже не представлял,<br>что моя жизнь<br>может быть так прекрасна.</p>
+        </div>
+
+        <video class="video" autoplay muted loop playsinline>
+            <source src="video.MP4" type="video/mp4">
+            Твой браузер не поддерживает видео.
+        </video>
+
+        <div class="text-block">
+            <p>С этого момента началась<br>наша самая красивая история.<br>Спасибо тебе за каждый момент❤️</p>
+        </div>
+    </div>
+
+    <!-- Кнопка теперь под видео -->
+    <button onclick="goNext()">Что было дальше? ❤️</button>
+</div>
+
+<script>
+function goNext() {
+    window.location.href = "march.html"; // имя следующей страницы
+}
+</script>
+
+</body>
+</html>

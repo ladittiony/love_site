@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Для самой любимой ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #fff;
+    color: #ff4e8a;
+    font-weight: bold;
+}
+
+#secret {
+    display: none;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.photo {
+    width: 220px;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.photos-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {transform: translateY(-10vh);}
+    100% {transform: translateY(110vh);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div id="login">
+        <h2>Введите наш секрет 💌</h2>
+        <input type="password" id="password" placeholder="Пароль...">
+        <br>
+        <button onclick="checkPassword()">Открыть ❤️</button>
+    </div>
+
+    <div id="secret">
+        <h1>С годовщиной, счастье мое ❤️</h1>
+        <p>
+            С того дня, как ты появилась в моей жизни,<br>
+            всё стало ярче, теплее и счастливее.
+        </p>
+
+    <div class="photos-wrapper">
+        <img src="photo_october/photo6.jpg" class="photo">
+        <img src="photo_january/photo1.jpg" class="photo">
+    </div>
+
+
+        <p>
+            Спасибо тебе за каждый момент.<br>
+            Люблю тебя больше вчерашнего дня 💖
+        </p>
+
+        <button onclick="goToStory()">Как всё начиналось 💌</button>
+
+    </div>
+</div>
+
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    if (password === "2602") {  // ← поменяй пароль
+        document.getElementById("login").style.display = "none";
+        document.getElementById("secret").style.display = "block";
+        createHearts();
+    } else {
+        alert("Неверный пароль 💔");
+    }
+}
+
+function createHearts() {
+    for (let i = 0; i < 40; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+        document.body.appendChild(heart);
+    }
+}
+
+function goToStory() {
+    window.location.href = "1.html";
+}
+
+</script>
+
+</body>
+</html>
